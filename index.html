@@ -1,17 +1,35 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>DNS rebinding</title>
-</head>
-<body>
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>URL Grabber v42</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+            </head>
+            <body style="height: 100vh;">
+                <div id="app" class="container" style="height: 100%">
+                    <br/>
+                    <h1 class="d-flex justify-content-center">Mega super URL grabber</h1>
+                    <h3 class="d-flex justify-content-center">\o/</h3>
+                    <br/>
+                    <h6 class="d-flex justify-content-center">Please be aware that I'm a nice tool, I don't grab pages that forbid me to frame them!</h3>
+                    <h6 class="d-flex justify-content-center"><span>Also keep out of my <a href="/admin">/admin</a> page (it's only accessible from localhost anyway... I made sure of that in the <a href="/source">/source</a>)</span></h6>
+                    <br/>
+                    <br/>
+                    <div class="input-group input-group-lg mb-3">
+                        <input v-model="url" class="form-control">
+                        <div class="input-group-append">
+                            <button v-on:click="grab" class="btn btn-primary">graby-grabo?</button>
+                        </div>
+                    </div>
+                    <iframe :srcdoc="page" width="100%" height="50%"></iframe>
+                </div>
                 <script>
                     new Vue({
                         el: '#app',
                         data: {url: 'www.google.fr', page: ''},
                         methods: {
                           grab: function () {
-                            this.page = 'www.google.fr';
+                            this.page = '';
                             fetch('/grab?url=' + this.url)
                                 .then((r) => r.text())
                                 .then((r) => {
@@ -21,5 +39,5 @@
                         }
                     })
                 </script>
-</body>
-</html>
+            </body>
+        </html>
