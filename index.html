@@ -5,8 +5,21 @@
   <title>DNS rebinding</title>
 </head>
 <body>
-    <script>
-        alert("The URL of this page is: " + window.location.href);
-    </script>
+<script>
+                    new Vue({
+                        el: '#app',
+                        data: {url: 'www.google.fr', page: ''},
+                        methods: {
+                          grab: function () {
+                            this.page = '';
+                            fetch('/grab?url=' + this.url)
+                                .then((r) => r.text())
+                                .then((r) => {
+                                    this.page = r;
+                                    })
+                            }
+                        }
+                    })
+                </script>
 </body>
 </html>
