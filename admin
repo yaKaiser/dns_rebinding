@@ -1,0 +1,10 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Yako secret page</title>
+   </head>
+   <body>
+      <p>This is not the secret admin page</p>
+   </body>
+</html>
