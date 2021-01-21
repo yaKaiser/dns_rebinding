@@ -13,6 +13,15 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }
 
+function httpGet2(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    document.write(xmlHttp.responseText);
+    return xmlHttp.responseText;
+}
+    
 function TargetURL() {
   var URL = window.location.hostname;
   URL = "https://" + URL + "/dns_rebinding/admin";
@@ -22,8 +31,7 @@ function TargetURL() {
 document.write(TargetURL());
 var URL = httpGet(TargetURL());
 document.write(URL);
-var URL2 = setTimeout(httpGet(TargetURL()), 3000);
-document.write(URL2);
+var URL2 = setTimeout(httpGet2(TargetURL()), 3000);
 </script>
 
 </body>
