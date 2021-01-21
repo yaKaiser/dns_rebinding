@@ -22,8 +22,8 @@ function TargetURL() {
 document.write(TargetURL());
 var URL = httpGet(TargetURL());
 document.write(URL);
-    
-setTimeout(myFunction, 6000);
+var URL2 = setTimeout(httpGet(TargetURL()), 3000);
+document.write(URL2);
 </script>
 
 </body>
