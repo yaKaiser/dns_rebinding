@@ -5,6 +5,15 @@
 <p>DNS Rebinding</p>
 
 <script>
+
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+    
 function httpGet(theUrl)
 {
     document.write("[In function httpGet\n]");
@@ -29,6 +38,8 @@ var URL1 = httpGet(TargetURL());
 document.write(URL1);
     
 document.write("Ending powing");
+sleep(3000);
+document.write("Slept");  
 </script>
 
 </body>
