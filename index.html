@@ -12,27 +12,17 @@ function httpGet(theUrl)
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
-
-function httpGet2(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    document.write(xmlHttp.responseText);
-    return xmlHttp.responseText;
-}
     
 function TargetURL() {
   var URL = window.location.hostname;
   URL = "https://" + URL + "/dns_rebinding/admin";
-  return URL;
+  URL2 = "https://www.google.fr"
+  return URL2;
 }
 
 document.write("Starting powing");
-var URL1 = httpGet("https://google.fr/");
+var URL1 = httpGet(TargetURL());
 document.write(URL1);
-
-setTimeout(httpGet(URL), 3000);
     
 document.write("Ending powing");
 </script>
