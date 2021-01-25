@@ -7,6 +7,7 @@
 <script>
 function httpGet(theUrl)
 {
+    document.write("[In function httpGet]");
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -14,6 +15,7 @@ function httpGet(theUrl)
 }
     
 function TargetURL() {
+  document.write("[In function TargetURL]");
   var URL = window.location.hostname;
   URL = "https://" + URL + "/dns_rebinding/admin";
   URL2 = "https://www.google.fr"
